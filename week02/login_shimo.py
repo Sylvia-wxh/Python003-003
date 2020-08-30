@@ -14,8 +14,8 @@ s = requests.Session()
 
 login_url = 'https://shimo.im/lizard-api/auth/password/login'
 form_data = {
-    'mobile': '+8613428776757',
-    'password': 'test123'
+    'mobile': '+86134*******7',
+    'password': 't*****3'
 }
 
 response = s.post(login_url, data=form_data, headers=headers)

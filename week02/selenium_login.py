@@ -9,8 +9,8 @@ try:
 
     browser.find_element_by_xpath('//*[@class="login-button btn_hover_style_8"]').click()
 
-    browser.find_element_by_xpath('//*[@name="mobileOrEmail"]').send_keys('13428776757')
-    browser.find_element_by_xpath('//*[@name="password"]').send_keys('test123')
+    browser.find_element_by_xpath('//*[@name="mobileOrEmail"]').send_keys('134********7')
+    browser.find_element_by_xpath('//*[@name="password"]').send_keys('t****3')
     time.sleep(1)
     browser.find_element_by_xpath('//*[@class="sm-button submit sc-1n784rm-0 bcuuIb"]').click()
 
