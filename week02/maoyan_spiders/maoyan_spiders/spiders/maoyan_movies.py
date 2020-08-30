@@ -13,7 +13,8 @@ class MaoyanMoviesSpider(scrapy.Spider):
 
 # 进入猫眼主页
     def start_requests(self):
-        url = "file:///C:/Users/Swu1/GitHub%20Code/Python003-003/week02/maoyan_spiders/maoyan.htm"
+        # url = "file:///C:/Users/Swu1/GitHub%20Code/Python003-003/week02/maoyan_spiders/maoyan.htm"
+        url = "https://maoyan.com/films?showType=3"
         yield scrapy.Request(url=url, callback=self.parse, dont_filter=False)
 
 #从主页的movie-hover-info开始读取需要的信息，避开翻页。

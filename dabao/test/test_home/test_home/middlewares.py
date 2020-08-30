@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 import random
 
 
-class MaoyanSpidersSpiderMiddleware:
+class TestHomeSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -61,7 +61,7 @@ class MaoyanSpidersSpiderMiddleware:
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
 
-class RandomHttpProxyMiddleware(HttpProxyMiddleware):
+class RandomBinProxyMiddleware(HttpProxyMiddleware):
 
     def __init__(self, auth_encoding='utf-8', proxy_list=None):
         self.proxies = defaultdict(list)
@@ -83,7 +83,8 @@ class RandomHttpProxyMiddleware(HttpProxyMiddleware):
         proxy = random.choice(self.proxies[scheme])
         request.meta['proxy'] = proxy
 
-class MaoyanSpidersDownloaderMiddleware:
+
+class TestHomeDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
