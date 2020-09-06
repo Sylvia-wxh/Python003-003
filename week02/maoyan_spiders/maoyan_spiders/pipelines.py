@@ -32,7 +32,6 @@ class MaoyanSpidersPipeline:
     
     def __init__(self):
         self.conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='test123', db='homework')
-        self.cur = self.conn.cursor()
 
     def process_item(self, item, spider):
         film_name = item['film_name']
@@ -40,14 +39,17 @@ class MaoyanSpidersPipeline:
         film_time = item['film_time']
         
         try:
+            cur=self.conn.cursor()
             insert_sql = """
             insert into film_list(film_name, film_type, film_time) VALUES(%s, %s, %s)
             """
 
-            self.cur.execute(insert_sql, (film_name, film_type, film_time))
+            cur.execute(insert_sql, (film_name, film_type, film_time))
             self.conn.commit()
         except:
             self.conn.rollback()
+        finally:
+            cur.close()
         return item
         # output = f'|{film_name}|\t|{film_type}|\t|{film_time}|\n\n'
         # with open('./maoyan_movie.csv', 'a+', encoding= 'gbk') as article:
@@ -55,5 +57,4 @@ class MaoyanSpidersPipeline:
         # return item
 
     def close_conn(self):
-        self.cursor.close()
         self.conn.close()
