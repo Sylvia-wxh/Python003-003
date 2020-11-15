@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 # 产品名字和评论
-class Shampoo(models.Model):
+class shampoo_senti(models.Model):
     # id 自动创建
     date = models.DateField()
     product_name = models.CharField(max_length=255)
