@@ -1,0 +1,8 @@
+mysql> CREATE TABLE shampoo(
+    -> id INT NOT NULL AUTO_INCREMENT,
+    -> date DATE,
+    -> product_name VARCHAR(255) NOT NULL,
+    -> product_comment VARCHAR(1024) NOT NULL,
+    -> PRIMARY KEY(id)
+    -> )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+Query OK, 0 rows affected (0.04 sec)
